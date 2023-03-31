@@ -1,0 +1,24 @@
+import re
+
+# Ruta del archivo de entrada y salida
+ruta_entrada = "mi_archivo.txt"
+ruta_salida = "mi_archivo_sin_numeros.txt"
+
+# Expresión regular para encontrar números
+patron = re.compile(r'\d+')
+
+# Abrir el archivo de entrada y leer su contenido
+with open(ruta_entrada, 'r') as archivo_entrada:
+    contenido = archivo_entrada.read()
+
+# Dividir el contenido del archivo en líneas
+lineas = contenido.split("\n")
+
+# Abrir el archivo de salida en modo escritura
+with open(ruta_salida, 'w') as archivo_salida:
+    # Iterar a través de cada línea
+    for linea in lineas:
+        # Si la línea no contiene números y no está vacía
+        if not patron.search(linea) and linea.strip():
+            # Escribir la línea en el archivo de salida
+            archivo_salida.write(linea + "\n")
