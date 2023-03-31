@@ -1,4 +1,4 @@
-# regex-
+# regex-1
 
 Este código es un script de Python que abre un archivo de texto, elimina las líneas que contienen números y escribe el resultado en un nuevo archivo de texto.
 
